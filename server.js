@@ -1,7 +1,7 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const bodyparser = require("body-parser");
-const helmet = require('helmet');
+const cors = require("cors");
 
 require("dotenv").config();
 
@@ -9,7 +9,7 @@ const app = express();
 
 //app middleware
 app.use(bodyparser.json());
-app.use(helmet());
+app.use(cors());
 
 // Routes
 const applicationRoutes = require("./routes/applicationRoutes");
